@@ -1,0 +1,19 @@
+# /home/cristhian/Applications/typeapp/docker-compose.yml
+version: '3.8'
+
+services:
+  typing-app:
+    build: . # Contexto de construcción es el directorio actual (.) donde está Dockerfile
+    container_name: typing_app_container
+    ports:
+      - "4444:4444" # Mapea puerto host:contenedor
+    volumes:
+      # --- Bind Mount ---
+      # Mapea la carpeta './markdown_docs' del host (relativa a este docker-compose.yml)
+      # a la carpeta '/usr/src/app/markdown_docs' dentro del contenedor.
+      # Añadimos ':ro' para montarlo como solo lectura dentro del contenedor,
+      # ya que la aplicación solo necesita leer los archivos (buena práctica).
+      - ./markdown_docs:/usr/src/app/markdown_docs:ro
+    restart: unless-stopped
+
+# Ya no necesitamos la definición de volumen nombrado 'volumes:', la eliminamos.

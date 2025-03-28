@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Trainer Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Typing Trainer con Markdown</h1>
+
+    <div class="controls">
+        <label for="fileSelector">Selecciona un documento:</label>
+        <select id="fileSelector">
+            <option value="">Cargando...</option>
+        </select>
+        <button id="resetButton" title="Reiniciar lección actual" disabled>Reiniciar</button>
+        <button id="historyButton" title="Ver historial de progreso">Historial</button>
+        <label class="zen-mode-label">
+            <input type="checkbox" id="zenModeCheckbox"> Modo Zen
+        </label>
+    </div>
+
+    <div id="text-display-container">
+        <div id="text-display">
+            <!-- El texto a tipear se cargará aquí -->
+            Selecciona un archivo para empezar.
+        </div>
+    </div>
+
+    <textarea id="text-input" rows="5" placeholder="Empieza a tipear aquí..." disabled spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="none"></textarea>
+
+    <!-- Sección de Estadísticas Actualizada -->
+    <div id="stats">
+        <p>WPM Neto: <span id="wpm-net">0</span></p>
+        <p>WPM Bruto: <span id="wpm-gross">0</span></p>
+        <p>Precisión: <span id="accuracy">100</span>%</p>
+        <p>Errores: <span id="errors">0</span></p>
+        <p>Corregidos: <span id="corrected-errors">0</span></p>
+    </div>
+
+    <!-- Modal de Historial (inicialmente oculto) -->
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeHistoryModal">×</span>
+            <h2>Historial de Progreso</h2>
+            <div id="historyTableContainer">
+                <!-- La tabla del historial se generará aquí -->
+                <p>No hay historial guardado todavía.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# typing_app/.dockerignore
+
+node_modules
+app/node_modules
+npm-debug.log
+.git
+.gitignore
+Dockerfile
+*.md # Opcional: si no quieres copiar los md directamente, aunque el Dockerfile los copia
