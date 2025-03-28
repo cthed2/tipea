@@ -67,7 +67,7 @@ Un entrenador de mecanografía simple pero efectivo basado en la web que carga a
 *   Usa el botón "Historial" para ver tus resultados anteriores.
 
 ## Estructura del Proyecto 📁 
-
+```bash
 ├── app/ # Código fuente de la aplicación Node.js
 │ ├── public/ # Archivos estáticos (HTML, CSS, JS cliente)
 │ │ ├── index.html
@@ -82,6 +82,6 @@ Un entrenador de mecanografía simple pero efectivo basado en la web que carga a
 ├── docker-compose.yml # Configuración de Docker Compose
 ├── Dockerfile # Instrucciones para construir la imagen Docker
 └── README.md # Este archivo
-
+```
 ---
 _Desarrollado con fines de aprendizaje y práctica._
